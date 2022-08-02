@@ -1,0 +1,21 @@
+:root {
+    font-family: 'Roboto', sans-serif;
+    --surface-border: #28d7be;
+}
+
+.divider-horizontal {
+    border-top: .2rem solid var(--surface-border);
+}
+
+.divider-vertical {
+    border-left: .2rem solid var(--surface-border);
+    height: 100%;
+}
+
+.symbol-card {
+    background-color: #053241;
+}
+
+.gap {
+    gap: 1rem;
+}
