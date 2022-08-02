@@ -1,6 +1,6 @@
 # eQuota Case
 
-- [Live Demo](https://code.visualstudio.com/)
+- [Live Demo](https://equota-case.pages.dev/)
 
 ## Installing Dependencies
 
