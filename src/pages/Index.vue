@@ -14,7 +14,7 @@
       <div class="divider-horizontal" />
     </div>
     <div class="col-12 grid p-4">
-      <div class="col-7 flex flex-column gap">
+      <div class="col-12 lg:col-7 flex flex-column gap">
         <template v-if="portfolio.length === 0">
           <div class="flex align-center justify-content-center">
             <h2 class="text-white">
@@ -33,10 +33,10 @@
           />
         </template>
       </div>
-      <div class="col-1">
+      <div class="hidden lg:block lg:col-1">
         <div class="divider-vertical" />
       </div>
-      <div class="col-4">
+      <div class="col-12 lg:col-4">
         <Chart
           type="pie"
           :data="chartData"
@@ -47,7 +47,8 @@
   </div>
   <EDialog
     v-model:visible="display"
-    style="width: 50vw;"
+    :breakpoints="{'960px': '75vw', '640px': '100vw'}"
+    :style="{width: '50vw'}"
   >
     <template #header>
       <h3>Add & Update Stock List</h3>
