@@ -19,6 +19,7 @@ const router = createRouter({
 });
 
 router.beforeEach(async (to, from) => {
+    await store.dispatch('global/updateLoadingStatus',true)
     const symbols = store.getters['symbols/getSymbols']
     if (symbols?.length === 0) {
         await store.dispatch('symbols/updateSymbols')
@@ -29,6 +30,7 @@ router.beforeEach(async (to, from) => {
                 symbols: store.getters['symbols/getSymbols']
             })
         }
+        await store.dispatch('global/updateLoadingStatus',false)
     }
 })
 

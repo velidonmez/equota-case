@@ -11,7 +11,19 @@
     <div class="flex relative lg:static p-5 flex-auto">
       <div class="flex flex-column flex-auto">
         <div class="border-2 border surface-border border-round surface-section flex-auto">
-          <router-view />
+          <template v-if="loading">
+            <div class="w-full h-full flex flex-column justify-content-center align-items-center">
+              <ProgressSpinner />
+              <img
+                src="/logo.svg"
+                alt="Image"
+                height="120"
+              >
+            </div>
+          </template>
+          <template v-else>
+            <router-view />
+          </template>
         </div>
       </div>
     </div>
@@ -19,8 +31,17 @@
 </template>
 
 <script>
+import ProgressSpinner from 'primevue/progressspinner';
+
 export default {
-  components: {}
+  components: {
+    ProgressSpinner
+  },
+  computed: {
+    loading() {
+      return this.$store.getters['global/getLoadingStatus']
+    }
+  },
 }
 </script>
 <style>
